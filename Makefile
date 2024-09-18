@@ -7,10 +7,10 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=rtl8821cu
 PKG_RELEASE:=1
 
-PKG_SOURCE_URL:=https://github.com/morrownr/8821cu-20210118
+PKG_SOURCE_URL:=https://github.com/morrownr/8821cu-20210916
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_DATE:=2022-05-20
-PKG_SOURCE_VERSION:=7033001f95501fbd45c99360a473bf0a7b001656
+PKG_SOURCE_VERSION:=1597dfeda6cefd2e603fc7020ceca226d05fb108
 PKG_MIRROR_HASH:=skip
 
 PKG_LICENSE:=GPL-2.0
@@ -29,7 +29,7 @@ define KernelPackage/rtl8821cu
   DEPENDS:=+kmod-cfg80211 +kmod-mac80211 +kmod-usb-core +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT
   FILES:=$(PKG_BUILD_DIR)/rtl8821cu.ko
   AUTOLOAD:=$(call AutoProbe,rtl8821cu)
-  MODPARAMS:="rtw_drv_log_level=4 rtw_led_ctrl=1 rtw_vht_enable=2 rtw_power_mgnt=1 rtw_dfs_region_domain=0 rtw_country_code=US"
+#  MODPARAMS:="rtw_drv_log_level=4 rtw_led_ctrl=1 rtw_vht_enable=2 rtw_power_mgnt=1 rtw_dfs_region_domain=0 rtw_country_code=US"
   PROVIDES:=kmod-rtl8821cu
 endef
 
